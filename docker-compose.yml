@@ -1,0 +1,22 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8888:8888"
+    environment:
+      - PORT=8888
+      - MONGO_URI=mongodb://localhost:27017/nhutdb
+      - JWT_SECRET=R2kSUWXmK9rU28EhYxirY0DZ40RTr5ju0ppH7bkCSwXmALwoHh
+
+    depends_on:
+      - mongo
+
+  mongo:
+    image: arm64v8/mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/nhutdb
+
+volumes:
+  mongo_data:
