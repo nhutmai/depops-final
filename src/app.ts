@@ -11,6 +11,11 @@ const app = express();
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  console.log("Hello World");
+  res.send("Hello World");
+});
+
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/admin", adminRoutes);
