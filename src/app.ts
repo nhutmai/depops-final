@@ -12,8 +12,8 @@ const app = express();
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  console.log("Hello World");
-  res.send("Hello World");
+  console.log("Hello World by mai minh nhut");
+  res.send("Hello World by mai minh nhut");
 });
 
 app.use("/api/auth", authRoutes);
